@@ -229,18 +229,27 @@ button:active {
 </div>
 
   <script>
-    function showRandomImage() {
-      const images = document.querySelectorAll('.gallery img');
-      images.forEach(img => img.classList.remove('show'));
-      if (images.length > 0 && window.innerWidth <= 990) {
-        const randomIndex = Math.floor(Math.random() * images.length);
-        images[randomIndex].classList.add('show');
-      }
+  function showRandomImage() {
+    const images = document.querySelectorAll('.gallery img');
+    images.forEach(img => img.classList.remove('show'));
+    if (images.length > 0 && window.innerWidth <= 990) {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      images[randomIndex].classList.add('show');
     }
+  }
 
-    window.addEventListener('DOMContentLoaded', showRandomImage);
-    window.addEventListener('resize', showRandomImage);
-  </script>
+  window.addEventListener('DOMContentLoaded', () => {
+    showRandomImage();
+
+    // Démarre le défilement automatique toutes les 3 secondes
+    setInterval(() => {
+      showRandomImage();
+    }, 3000);
+  });
+
+  window.addEventListener('resize', showRandomImage);
+</script>
+
 
 </body>
 </html>
