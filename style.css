@@ -167,80 +167,184 @@ footer {
     overflow-x: hidden;
   }
 
-  header img {
-    width: 90px;
-  }
+  body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-  h1 {
-    font-size: 1.8em;
-  }
+    header {
+      text-align: center;
+      padding: 20px;
+    }
 
-  header p {
-    font-size: 0.95em;
-    padding: 0 10px;
-  }
+    header img {
+      width: 120px;
+    }
 
-  .gallery {
-    padding: 20px;
-    gap: 20px;
-    grid-template-columns: 1fr;
-  }
+    h1 {
+      font-size: 2.5em;
+      margin: 10px 0;
+    }
 
-  .left, .right, .topleft, .topright {
-    display: none;
-    position: none;
-  }
+    header p {
+      font-size: 1.2em;
+      color: #777;
+    }
 
-  .btn-planning {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-  }
+    .gallery {
+      padding: 40px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-  .card {
-    flex-direction: column;
-    width: 100%;
-    padding: 15px;
-    gap: 10px;
-  }
+    .gallery img {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
 
-  .socialContainer {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
-  }
-
-  .socialContainer a {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .socialSvg {
-    width: 14px;
-  }
-
-  button {
-    padding: 0.8em 2em;
-    font-size: 14px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #00ff00;
-  }
-
-  footer {
-    text-align: center;
-    font-size: 0.8em;
-    padding: 20px 10px;
-  }
-
-  .main-image {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  }
+    button {
+ --glow-color: rgba(255, 217, 0, 0.833);
+ --glow-spread-color: rgba(4, 4, 4, 0.781);
+ --enhanced-glow-color: rgba(235, 98, 35, 0.858);
+ --btn-color: rgba(6, 6, 6, 0.686);
+ border: .25em solid var(--glow-color);
+ padding: 1em 3em;
+ color: var(--glow-color);
+ font-size: 15px;
+ font-weight: bold;
+ background-color: var(--btn-color);
+ border-radius: 1em;
+ outline: none;
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+ text-shadow: 0 0 .5em var(--glow-color);
+ position: relative;
+ transition: all 0.3s;
 }
+
+button::after {
+ pointer-events: none;
+ content: "";
+ position: absolute;
+ top: 120%;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background-color: var(--glow-spread-color);
+ filter: blur(2em);
+ opacity: .7;
+ transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+button:hover {
+ color: var(--btn-color);
+ background-color: var(--glow-color);
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+}
+
+button:active {
+ box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}
+
+.btn-planning {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+    .card-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+  flex-wrap: nowrap; /* change ici de wrap à nowrap */
+  /* ou supprimer cette ligne flex-wrap si elle existe */
+}
+
+    .card a {
+      text-decoration: none;
+    }
+
+    .socialContainer svg {
+      width: 40px;
+      height: 40px;
+      fill: #000;
+    }
+
+    .socialContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+ 
+
+    @media (max-width: 990px) {
+      .gallery {
+        display: block;
+        padding: 20px;
+      }
+
+      .gallery img {
+        display: none;
+      }
+
+      .gallery img.show {
+        display: block;
+        margin: 0 auto;
+      }
+
+      header img {
+        width: 90px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      header p {
+        font-size: 0.95em;
+        padding: 0 10px;
+      }
+
+      .btn-planning {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+
+       .card-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+  flex-wrap: nowrap; /* change ici de wrap à nowrap */
+  /* ou supprimer cette ligne flex-wrap si elle existe */
+}
+
+    .card a {
+      text-decoration: none;
+    }
+
+    .socialContainer svg {
+      width: 40px;
+      height: 40px;
+      fill: #000;
+    }
+
+    .socialContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+    }
+  }
