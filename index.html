@@ -12,7 +12,6 @@
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      color: #000;
     }
 
     header {
@@ -50,9 +49,9 @@
 
     button {
  --glow-color: rgba(255, 217, 0, 0.833);
- --glow-spread-color: rgba(44, 94, 11, 0.781);
+ --glow-spread-color: rgba(4, 4, 4, 0.781);
  --enhanced-glow-color: rgba(235, 98, 35, 0.858);
- --btn-color: rgba(13, 113, 16, 0.686);
+ --btn-color: rgba(6, 6, 6, 0.686);
  border: .25em solid var(--glow-color);
  padding: 1em 3em;
  color: var(--glow-color);
@@ -103,12 +102,13 @@ button:active {
   margin-bottom: 30px;
 }
     .card-container {
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+  flex-wrap: nowrap; /* change ici de wrap à nowrap */
+  /* ou supprimer cette ligne flex-wrap si elle existe */
+}
 
     .card a {
       text-decoration: none;
@@ -119,6 +119,14 @@ button:active {
       height: 40px;
       fill: #000;
     }
+
+    .socialContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+ 
 
     @media (max-width: 990px) {
       .gallery {
@@ -154,29 +162,33 @@ button:active {
         padding: 20px;
       }
 
-      .card-container {
-        flex-direction: column;
-        align-items: center;
-      }
+       .card-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+  flex-wrap: nowrap; /* change ici de wrap à nowrap */
+  /* ou supprimer cette ligne flex-wrap si elle existe */
+}
 
-      .socialContainer {
-        display: flex;
-        gap: 10px;
-        margin: 10px 0;
-      }
-
-      .socialContainer svg {
-        width: 32px;
-        height: 32px;
-      }
-
-      button {
-        padding: 0.8em 2em;
-        font-size: 14px;
-        border-radius: 10px;
-        box-shadow: 0 0 15px #00ff00;
-      }
+    .card a {
+      text-decoration: none;
     }
+
+    .socialContainer svg {
+      width: 40px;
+      height: 40px;
+      fill: #000;
+    }
+
+    .socialContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+      }
+    
   </style>
 </head>
 <body>
