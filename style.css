@@ -286,8 +286,6 @@ button:active {
   cursor: pointer;
 }
  
-
-    @media (max-width: 990px) {
       .gallery {
         display: block;
         padding: 20px;
@@ -347,4 +345,4 @@ button:active {
   cursor: pointer;
 }
     }
-  }
+  
