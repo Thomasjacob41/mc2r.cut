@@ -126,6 +126,49 @@ button:active {
   justify-content: center;
   cursor: pointer;
 }
+  .fl {
+  position: absolute;
+  top: -25px;
+  left: -40px;
+  width: 200px; /* Ajuste la taille si nécessaire */
+  z-index: -10;
+  display: block;
+}
+
+.fl2 {
+  position: absolute;
+  top: -25px;
+  right: -40px;
+  width: 200px; /* Ajuste la taille si nécessaire */
+  z-index: -10;
+  display: block;
+}
+
+
+.fl-bottom-left,
+.fl-bottom-right {
+  position: absolute;
+  bottom: 0;
+  
+  z-index: -1;
+}
+
+.fl-bottom-left {
+  left: -40px;
+  bottom: -30px;
+}
+
+.fl-bottom-right {
+  right: -40px;
+  bottom: -30px;
+}
+
+.fl-bottom-left img,
+.fl-bottom-right img {
+  width: 200px; /* tu peux ajuster la taille ici */
+  transform: rotate(180deg) scaleX(-1);
+
+}
  
 
     @media (max-width: 990px) {
