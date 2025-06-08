@@ -1,8 +1,9 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 1%;
+  margin: 1%;
+  padding: 0;
+  
 }
 
 body {
@@ -22,7 +23,12 @@ body {
   /* Optionnel : ajoute un léger bruit pour plus de texture */
   /* background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII='); */
 }
-
+body{
+   background:
+    linear-gradient(135deg, #181818 0%, #232323 100%),
+    radial-gradient(circle at 50% 40%, #18a608 0%, transparent 70%),
+    radial-gradient(circle at 30% 80%, #000000 0%, transparent 80%);
+}
 /* Header styles */
 header {
   text-align: center;
