@@ -11,6 +11,10 @@ body {
   align-items: center;
   position: relative;
   z-index: 1;
+  background:
+    linear-gradient(135deg, #181818 0%, #232323 100%),
+    radial-gradient(circle at 50% 40%, #18a608 0%, transparent 70%),
+    radial-gradient(circle at 30% 80%, #000000 0%, transparent 80%);
 }
 
 .background {
@@ -20,8 +24,8 @@ body {
   pointer-events: none;
   background:
     linear-gradient(135deg, #181818 0%, #232323 100%),
-    radial-gradient(circle at 60% 40%, #222 0%, transparent 70%),
-    radial-gradient(circle at 30% 80%, #111 0%, transparent 80%);
+    radial-gradient(circle at 50% 40%, #18a608 0%, transparent 70%),
+    radial-gradient(circle at 30% 80%, #000000 0%, transparent 80%);
   background-blend-mode: overlay;
   opacity: 0.95;
 }
