@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="website icon" type="image/png" href="logo.jpg">
+  <title>Contact - MC2R.CUT</title>
+  <link rel="stylesheet" href="style3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background"></div>
+  <header>
+    <img src="logo.jpg" alt="MC2N Logo" />
+    <h1>MC2R.CUT</h1>
+    <p>Aperçu Coupe client</p>
+  </header>
+  <section class="gallery">
+    <img src="4.jpg" alt="Coiffeur 1">
+    <img src="5.jpg" alt="Coiffeur 2">
+    <img src="6.jpg" alt="Coiffeur 3">
+    <img src="10.jpg" alt="Coiffeur 1">
+    <img src="11.jpg" alt="Coiffeur 3">
+    <img src="12.jpg" alt="Coiffeur 3">
+  </section>
+
+  </section>
+  </div>
+<a href="index.html" class="btn-retour">
+  <button type="button">Retour</button>
+</a>
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('.gallery img');
+    let current = 0;
+    function showImage(idx) {
+      images.forEach((img, i) => img.classList.toggle('active', i === idx));
+    }
+    showImage(current);
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }, 3000);
+  });
+</script>
+</body>
+</html>
