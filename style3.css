@@ -1,0 +1,124 @@
+/* Réinitialisation */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corps */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+  color: #f5f5f5;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  overflow-x: hidden;
+}
+
+/* Arrière-plan (optionnel) */
+.background,
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1));
+  z-index: -1;
+}
+
+/* En-tête */
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header img {
+  width: 130px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: gold;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #ccc;
+  font-size: 1.1em;
+}
+
+/* Galerie d'images */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.gallery img {
+  border: 3px solid #333;
+  border-radius: 10px;
+  padding: 6px;
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 260px;       /* Taille confortable */
+  max-width: 90%;     /* Ne dépasse jamais l'écran */
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Bouton retour */
+.btn-retour button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: gold;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.btn-retour button:hover {
+  background-color: #e6c200;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    html, body {
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  header img {
+    width: 100px;
+  }
+
+  .gallery img {
+    width: 80vw;
+    max-width: 320px;
+    padding: 5px;
+  }
+
+  .gallery {
+    gap: 16px;
+    padding: 10px;
+  }
+
+  .btn-retour button {
+    width: calc(100% - 40px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
