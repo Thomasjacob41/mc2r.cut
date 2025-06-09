@@ -1,9 +1,11 @@
+/* Reset global */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body & global styles */
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
@@ -11,9 +13,10 @@ body {
   position: relative;
   min-height: 150vh;
   padding-bottom: 80px;
-  overflow-x: hidden; /* suppression de la scrollbar horizontale */
+  overflow-x: hidden; /* suppression scrollbar horizontale */
 }
 
+/* Overlay */
 .overlay {
   position: fixed;
   inset: 0;
@@ -21,6 +24,7 @@ body {
   z-index: -1;
 }
 
+/* Header */
 header {
   text-align: center;
   padding: 40px 20px;
@@ -43,6 +47,7 @@ header p {
   font-size: 1.1em;
 }
 
+/* Gallery */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -66,6 +71,7 @@ header p {
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
 }
 
+/* Decorative absolute elements */
 .left, .right, .topleft, .topright {
   position: absolute;
   width: 500px;
@@ -93,6 +99,7 @@ header p {
   transform: rotate(90deg);
 }
 
+/* Card container and cards */
 .card-container {
   text-align: center;
   margin-top: 40px;
@@ -111,6 +118,7 @@ header p {
   border-radius: 12px;
 }
 
+/* Social icons container */
 .socialContainer {
   width: 52px;
   height: 52px;
@@ -119,8 +127,10 @@ header p {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
+  cursor: pointer;
 }
+
 .containerOne:hover { background-color: #c405a4; }
 .containerTwo:hover { background-color: #00acee; }
 .containerThree:hover { background-color: #0072b1; }
@@ -128,25 +138,28 @@ header p {
 
 .socialContainer:active {
   transform: scale(0.9);
-  transition-duration: .3s;
+  transition-duration: 0.3s;
 }
 
 .socialSvg {
   width: 17px;
 }
+
 .socialSvg path {
   fill: gold;
 }
+
 .socialContainer:hover .socialSvg {
   animation: slide-in-top 0.3s both;
 }
+
+/* Animation keyframes */
 @keyframes slide-in-top {
   0% { transform: translateY(-50px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
 }
 
-
-
+/* Footer */
 footer {
   position: absolute;
   bottom: 0;
@@ -158,101 +171,66 @@ footer {
   font-size: 0.9em;
 }
 
-
-@media (max-width: 990px) {
-   html, body {
-    overflow-x: hidden;
-  }
-
-  body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      text-align: center;
-      padding: 20px;
-    }
-
-    header img {
-      width: 120px;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin: 10px 0;
-    }
-
-    header p {
-      font-size: 1.2em;
-      color: #777;
-    }
-
-    .gallery {
-      padding: 40px;
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .gallery img {
-      max-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-
-    button {
- --glow-color: rgba(255, 217, 0, 0.833);
- --glow-spread-color: rgba(4, 4, 4, 0.781);
- --enhanced-glow-color: rgba(235, 98, 35, 0.858);
- --btn-color: rgba(6, 6, 6, 0.686);
- border: .25em solid var(--glow-color);
- padding: 1em 3em;
- color: var(--glow-color);
- font-size: 15px;
- font-weight: bold;
- background-color: var(--btn-color);
- border-radius: 1em;
- outline: none;
- box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 1em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color);
- text-shadow: 0 0 .5em var(--glow-color);
- position: relative;
- transition: all 0.3s;
- white-space: nowrap; 
+/* Buttons */
+button {
+  --glow-color: rgba(255, 217, 0, 0.833);
+  --glow-spread-color: rgba(4, 4, 4, 0.781);
+  --enhanced-glow-color: rgba(235, 98, 35, 0.858);
+  --btn-color: rgba(6, 6, 6, 0.686);
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow:
+    0 0 1em 0.25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 button::after {
- pointer-events: none;
- content: "";
- position: absolute;
- top: 120%;
- left: 0;
- height: 100%;
- width: 100%;
- background-color: var(--glow-spread-color);
- filter: blur(2em);
- opacity: .7;
- transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 button:hover {
- color: var(--btn-color);
- background-color: var(--glow-color);
- box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 2em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color);
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow:
+    0 0 1em 0.25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
 }
 
 button:active {
- box-shadow: 0 0 0.6em .25em var(--glow-color),
-        0 0 2.5em 2em var(--glow-spread-color),
-        inset 0 0 .5em .25em var(--glow-color);
+  box-shadow:
+    0 0 0.6em 0.25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 0.5em 0.25em var(--glow-color);
 }
 
+/* Planning button container */
 .btn-planning {
   text-align: center;
   margin-top: 20px;
@@ -261,151 +239,156 @@ button:active {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-    .card-container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  gap: 10px;
-  flex-wrap: nowrap; /* change ici de wrap à nowrap */
-  /* ou supprimer cette ligne flex-wrap si elle existe */
+
+/* Responsive styles */
+@media (max-width: 990px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    text-align: center;
+    padding: 20px;
+  }
+
+  header img {
+    width: 90px; /* réduit sur mobile */
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+    margin: 10px 0;
+  }
+
+  header p {
+    font-size: 0.95em;
+    padding: 0 10px;
+    color: #777;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .gallery img {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+
+  /* Cache images par défaut dans la galerie, affiche celles avec .show */
+  .gallery img {
+    display: none;
+  }
+
+  .gallery img.show {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Card container en flex avec nowrap */
+  .card-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .card a {
+    text-decoration: none;
+  }
+
+  .socialContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .socialContainer svg {
+    width: 40px;
+    height: 40px;
+    fill: #000;
+  }
+
+  /* Planning button container */
+  .btn-planning {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Button styles duplicated for mobile */
+  button {
+    --glow-color: rgba(255, 217, 0, 0.833);
+    --glow-spread-color: rgba(4, 4, 4, 0.781);
+    --enhanced-glow-color: rgba(235, 98, 35, 0.858);
+    --btn-color: rgba(6, 6, 6, 0.686);
+    border: 0.25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow:
+      0 0 1em 0.25em var(--glow-color),
+      0 0 4em 1em var(--glow-spread-color),
+      inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  button::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: 0.7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow:
+      0 0 1em 0.25em var(--glow-color),
+      0 0 4em 2em var(--glow-spread-color),
+      inset 0 0 0.75em 0.25em var(--glow-color);
+  }
+
+  button:active {
+    box-shadow:
+      0 0 0.6em 0.25em var(--glow-color),
+      0 0 2.5em 2em var(--glow-spread-color),
+      inset 0 0 0.5em 0.25em var(--glow-color);
+  }
 }
-
-    .card a {
-      text-decoration: none;
-    }
-
-    .socialContainer svg {
-      width: 40px;
-      height: 40px;
-      fill: #000;
-    }
-
-    .socialContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
- 
-      .gallery {
-        display: block;
-        padding: 20px;
-      }
-
-      .gallery img {
-        display: none;
-      }
-
-      .gallery img.show {
-        display: block;
-        margin: 0 auto;
-      }
-
-      header img {
-        width: 90px;
-      }
-
-      h1 {
-        font-size: 1.8em;
-      }
-
-      header p {
-        font-size: 0.95em;
-        padding: 0 10px;
-      }
-
-      .btn-planning {
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-       white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-      }
-
-       .card-container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  gap: 10px;
-  flex-wrap: nowrap; /* change ici de wrap à nowrap */
-  /* ou supprimer cette ligne flex-wrap si elle existe */
-}
-
-    .card a {
-      text-decoration: none;
-    }
-
-    .socialContainer svg {
-      width: 40px;
-      height: 40px;
-      fill: #000;
-    }
-
-    .socialContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-button {
- --glow-color: rgba(255, 217, 0, 0.833);
- --glow-spread-color: rgba(4, 4, 4, 0.781);
- --enhanced-glow-color: rgba(235, 98, 35, 0.858);
- --btn-color: rgba(6, 6, 6, 0.686);
- border: .25em solid var(--glow-color);
- padding: 1em 3em;
- color: var(--glow-color);
- font-size: 15px;
- font-weight: bold;
- background-color: var(--btn-color);
- border-radius: 1em;
- outline: none;
- box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 1em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color);
- text-shadow: 0 0 .5em var(--glow-color);
- position: relative;
- transition: all 0.3s;
- white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-button::after {
- pointer-events: none;
- content: "";
- position: absolute;
- top: 120%;
- left: 0;
- height: 100%;
- width: 100%;
- background-color: var(--glow-spread-color);
- filter: blur(2em);
- opacity: .7;
- transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
- white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-button:hover {
- color: var(--btn-color);
- background-color: var(--glow-color);
- box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 2em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color);
-}
-
-button:active {
- box-shadow: 0 0 0.6em .25em var(--glow-color),
-        0 0 2.5em 2em var(--glow-spread-color),
-        inset 0 0 .5em .25em var(--glow-color);
-}
-
-
-/* S'assure qu'il ne déborde pas trop sur mobile */
-}
-    
-  
