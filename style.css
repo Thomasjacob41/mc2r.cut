@@ -122,6 +122,7 @@ header p {
   box-shadow: 0 0 20px #d4af37;
   transition: background-color 0.3s ease, color 0.3s ease;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .btn-planning button:hover {
