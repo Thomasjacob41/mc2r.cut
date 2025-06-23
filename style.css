@@ -95,7 +95,7 @@ header p {
   position: relative;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 768px) {
   .gallery img,
   .gallery img.active {
     width: 300px;
@@ -170,3 +170,68 @@ header p {
   height: 28px;
   fill: currentColor;
 }
+
+.sidebar {
+      height: 100vh;
+      width: 250px;
+      background-color: #000000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      padding-top: 30px;
+      box-shadow: 2px 0 5px rgba(255, 215, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar a {
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #FFD700;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #FFD700;
+      color: #000000;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 30px;
+      transition: margin-left 0.3s ease;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 1001;
+      color: #FFD700;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+
+      .sidebar.active {
+        transform: translateX(0);
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .content {
+        margin-left: 0;
+        padding-top: 70px;
+      }
+    }
